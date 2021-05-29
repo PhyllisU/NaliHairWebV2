@@ -16,7 +16,6 @@ import ScreenJournal from './ScreenJournal';
 import ScreenSelectedPhoto from './screens/ScreenSelectedPhoto';
 import ScreenHairDresser from './screens/ScreenHairDresser';
 import ScreenDetailHairDresser from './screens/ScreenDetailHairDresser';
-import ScreenRecipes from './screens/screenRecipes';
 import ScreenDiagnostic from './screens/ScreenDiagnostic';
 import ScreenFormulaire from './screens/ScreenFormulaire';
 import ScreenStripe from './screens/screenStripe';
@@ -58,8 +57,6 @@ function App() {
         <Route component={ScreenDay1} path="/screenday1" exact />
         <Route component={ScreenDay2} path="/screenday2" exact />
         <Route component={ScreenBravo} path="/screenbravo" exact />
-
-        <Route component={ScreenRecipes} path="/screenrecipes" exact />
 
         <Route component={ScreenJournal} path="/screenjournal" exact />
         <Route component={ScreenSelectedPhoto} path="/screenselectedphoto" exact />
