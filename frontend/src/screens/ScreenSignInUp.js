@@ -4,7 +4,6 @@ import '../App.css';
 import {Card} from 'antd';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import {Link, Redirect} from 'react-router-dom'
-import Nav from '../components/nav';
 import {connect} from 'react-redux'
 
 function ScreenSignInUp(props) {
@@ -76,7 +75,6 @@ function ScreenSignInUp(props) {
   return (
     <div style={{position: 'relative'}}>
     <div className="signup-page" >
-      <Nav/>
   
 
  {/* Screen sign up */}

@@ -7,39 +7,11 @@ import video from '../video/routine.gif'
 import {Link, Redirect} from 'react-router-dom'
 import { HeartOutlined, RightOutlined, DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled  } from '@ant-design/icons';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
 import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {connect} from 'react-redux'
 
-function TabPanel(props) {
-  const { children, val, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={val !== index}
-      id={`scrollable-auto-tabpanel-${index}`}
-      aria-labelledby={`scrollable-auto-tab-${index}`}
-      {...other}
-    >
-      {val === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
 
 function a11yProps(index) {
   return {
@@ -155,7 +127,6 @@ const [click, setClick] = useState(0);
       
       const body = await database.json()
 
-     //console.log(body.routine.likes.length, "  BODY")
       setLikes(body.routine.likes.length)
       setLikesOne(body.routine.likes1.length)
       setLikesTwo(body.routine.likes2.length)
@@ -472,98 +443,17 @@ const [click, setClick] = useState(0);
          <img src={video} style={{ position: 'absolute', width: '100%', height: '50%'}}></img>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
          <div className={classes.roots}>
-      <AppBar position="static" color="">
-        <Tabs
-          value={val}
-          onChange={handleChangeVal}
-          indicatorColor=""
-          //textColor="secondary"
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable auto tabs example"
-        >
-          <Tab onClick={ () => {setClick(0);  setType('all')}} style={clicked}  label="Toutes les routines" {...a11yProps(0)} />
-          <Tab onClick={ () => {setClick(1);  setType('crépus')}} style={clicked1} label="Crépus" {...a11yProps(1)} />
-          <Tab onClick={ () => {setClick(2);  setType('ondulé')}} style={clicked2}  label="Ondulés à bouclés" {...a11yProps(2)} />
-          <Tab onClick={ () => {setClick(3);  setType('frisé')}} style={clicked3}  label="Frisés" {...a11yProps(3)} />
-          <Tab onClick={ () => {setClick(4);  setType('transition')}} style={clicked4}  label="En transition" {...a11yProps(4)} />
-          <Tab onClick={ () => {setClick(5);  setType('défrisé')}} style={clicked5}  label="Défrisé, avec lissage" {...a11yProps(5)} />
-          <Tab onClick={ () => {setClick(6);  setType('tresses')}}  style={clicked6} label="Tresses, nattes, vanilles, locks" {...a11yProps(6)} />
-          <Tab onClick={ () => {setClick(7);  setType('hommes')}} style={clicked7}  label="Hommes" {...a11yProps(7)} />
-          <Tab onClick={ () => {setClick(8);  setType('enfants')}} style={clicked8}   label="Enfants" {...a11yProps(8)} />
-          
-        </Tabs>
-      </AppBar>
-      <TabPanel value={val} index={0}>
-        Item One
-      </TabPanel>
-      <TabPanel value={val} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={val} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={val} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={val} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={val} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={val} index={6}>
-        Item Seven
-      </TabPanel>
+      
     </div>
       <br/><br/> <br/> 
             <div style={styles.center}>
                <div className="line"></div>
        </div>
            
-           {/* <h1 style={{marginLeft: '2%', fontSize: '25px', marginBottom: '2%', fontWeight: 'bold'}}>{programs.name} </h1>
-           <p style={{marginLeft: '2%', fontSize: '20px', marginBottom: '-1%'}}>{programs.desc} </p>    */}
                <div className="routine-page">
                  <div style={styles.card}  >
                    {/**/ }
 
-                   <Card 
-                 
-                  hoverable
-                  style={{ width: 500, borderRadius: 10, marginLeft: '2%', marginRight: '2%', marginTop: '4%',  }}
-                 
-                  >
-                      
-                      <div style={{display: 'flex', flexDirection: 'row', }}>
-                    <img
-                      style={{width: '40%' ,height: 'auto', marginRight: '7%', marginLeft: '-25px', marginTop: '-25px', marginBottom: '-26px'}}
-                      alt="example"
-                      src="https://res.cloudinary.com/dzcx4fqfn/image/upload/v1618951261/jassir-jonis-NnjYBP1zH8c-unsplash_nxfkso.jpg"
-                    /> 
-                     <div style={{ flexDirection: 'col' }}>
-                    <p style={{fontSize: '15px', fontWeight: 'bold',}}>Diagnostic personalisé</p>
-                    <p style={{ marginRight: '10%'}}></p>
-                    <p></p>
-                    <br/><br/><br/><br/><br/><br/><br/><br/>
-                    <div style={{ display: 'flex', flexDirection: 'row', }}>
-                       <Comment
-                      actions={actionsThree}
-                      />
-                    <HeartOutlined  style={{ marginRight:'2%', marginTop:'20%', color: colorThree,  }} />
-                    
-                   
-                    </div>
-                    <Link to="screendiagnostic">
-                    <RightOutlined
-                    
-                     style={{display: 'flex', justifyContent: 'flex-end', fontSize: '20px', marginTop: '-10%' }}/>
-                     </Link>
-                     </div>
-                   </div>
-                       
-                      
-                  </Card>
-               
                <Card 
                   onClick={() => handleSubmitRoutine(1)}
                   hoverable
@@ -620,8 +510,7 @@ const [click, setClick] = useState(0);
                     </div>
                     
                   </Card>
-                  
-                  {/* onClick={() => handleSubmitRoutine()}*/}
+
                   <Card 
                 
                   hoverable
@@ -650,7 +539,6 @@ const [click, setClick] = useState(0);
                     
                   </Card>
                   
-                  {/* onClick={() => handleSubmitRoutine()}*/}
                   
                   <Card 
                  
@@ -689,9 +577,6 @@ const [click, setClick] = useState(0);
                       
                   </Card>
 
-
-
-                 
                   <Card 
                  
                   hoverable
@@ -748,8 +633,6 @@ const styles = ({
    flexWrap: 'wrap',
    justifyContent: 'center',
   }, btn: {
-    // borderColor: "#222222",
-    // borderWidth: 1,
     border: '3px solid black',
     backgroundColor: 'rgba(255, 255, 255, .7)',
      fontSize: '20px',
@@ -758,8 +641,6 @@ const styles = ({
      fontWeight: 'bold', 
     }, 
     btn1:{
-     // borderColor: "#222222",
-     // borderWidth: 1,
      border: '3px solid black',
       fontSize: '20px',
       padding: '15px',
