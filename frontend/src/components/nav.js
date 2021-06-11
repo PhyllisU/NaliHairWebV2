@@ -11,39 +11,6 @@ import { Nav, NavItem, NavLink} from 'reactstrap';
 import {Link, Redirect,  } from 'react-router-dom'
 
 
-/*function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`scrollable-auto-tabpanel-${index}`}
-      aria-labelledby={`scrollable-auto-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}*/
-
-/*TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};*/
-
-/*function a11yProps(index) {
-  return {
-    id: `scrollable-auto-tab-${index}`,
-    'aria-controls': `scrollable-auto-tabpanel-${index}`,
-  };
-}*/
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -83,7 +50,6 @@ export default function ScrollableTabsButtonAuto(props) {
           <img style={{width: 100, height: 100, marginTop: '-1%', marginLeft: '-2%', marginRight: '1%'}} src={logo}></img>  
           <Link to='/'><p style={navitem} > Home</p></Link>
           <Link to='/screenroutine'><p style={navitem}>Routine</p></Link>
-          <Link to='/screenrecipes'><p style={navitem}>Recettes</p></Link>
           <Link to='/screenselectedphoto'><p style={navitem} >Journal</p></Link>
           <Link to='/screenhairdresser'><p style={navitem}>Se coiffer</p></Link>
           <Link to='/screenbecomeahairdress'><p style={navitem}>Devenir coiffeuse</p></Link>
@@ -103,14 +69,9 @@ const navigation =
     width: '100%',
     backgroundColor: '#ffffff',
     marginTop: '1%',
-    //padding: 0,
-   // marginLeft: '20%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-   // justifyContent: 'space-around',
-    
-   // boxShadow: '0px 1px 1px 0px',
   }
 
   const navitem =
@@ -118,7 +79,6 @@ const navigation =
   fontFamily: 'Roboto', 
   fontSize: '30px',
   backgroundColor: "",
-  // color: '#262626',
   marginRight: '60px',
   marginBottom: 0,
   float: 'left',
