@@ -395,10 +395,10 @@ router.post('/add-pics', async function(req, res, next) {
   
     var userPhoto = await userModel.findOne({token: req.body.token})
     
-    var date = new Date().toLocaleString()
+    // var date = new Date().toLocaleString()
     
     if(userPhoto){
-      userPhoto.photo.push({url: resultCloudinary.url, date: date, comment: 'Add com'});
+      userPhoto.photo.push({url: resultCloudinary.url, comment: 'Add com'});
      
       var photoSave = await userPhoto.save()
       

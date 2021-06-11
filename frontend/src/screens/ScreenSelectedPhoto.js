@@ -188,7 +188,7 @@ if(fileDB){
           hoverable
                    style={{ width: 250, borderRadius: 10, marginLeft: '10px', marginRight: '10px', marginTop: '5%' }}>
                     
-                     <p style={{fontSize: '15px', fontWeight: 'bold'}}>{new Date(file.date).toLocaleDateString()}</p>
+                     <p style={{fontSize: '15px', fontWeight: 'bold'}}>{new Date().toLocaleDateString()}</p>
                      <img onClick={()=> {setModal2Visible(true); setModalPhoto(file.url);}} style={{width: 160, height: 160, color: 'red', marginRight: '7%'}} src={file.url}  />
                      <p style={{fontSize: '15px', fontWeight: 'bold', marginTop: '4%'}}>Commentaire</p>
                      

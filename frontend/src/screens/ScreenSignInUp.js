@@ -1,7 +1,7 @@
-
 import React, {useState, useEffect} from 'react';
 import '../App.css';
 import {Card} from 'antd';
+//import { UserOutlined, LockOutlined  } from '@ant-design/icons';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import {Link, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
@@ -75,7 +75,11 @@ function ScreenSignInUp(props) {
   return (
     <div style={{position: 'relative'}}>
     <div className="signup-page" >
+      
   
+{/* <p> ScreenSignInUp</p>
+              <Link to="/"><Button href="" style={{width:'80px'}} type="primary">Home</Button></Link>
+ */}
 
  {/* Screen sign up */}
  <br/>
@@ -129,6 +133,26 @@ function ScreenSignInUp(props) {
 </Card>
 </div>
 
+          {/* SIGN-IN */}
+
+          {/* <div className="Sign">
+                  
+                  <Input className="Login-input" placeholder="E-mail" />
+                  <Input.Password className="Login-input" placeholder="Mot de passe" />
+            
+            <Link to="/routine"><Button href="" style={{width:'80px'}} type="primary">Valider</Button></Link>
+          </div> */}
+
+          {/* SIGN-UP */}
+
+          {/* <div className="Sign">
+                  
+                  <Input className="Login-input" placeholder="Prénom" />
+                  <Input className="Login-input" placeholder="E-mail" />
+                  <Input.Password className="Login-input" placeholder="Mot de passe" />
+            
+                  <Link to="/routine"><Button href="" style={{width:'80px'}} type="primary">Valider</Button></Link>
+          </div> */}
 
       </div>
       </div>
@@ -138,6 +162,8 @@ function ScreenSignInUp(props) {
 const styles = ({
  
   form: {
+   //width: '200px',
+   //position: 'relative',
    borderRadius: '5px',
    height: '290px',
    backgroundColor: 'white',
@@ -147,6 +173,13 @@ const styles = ({
    marginTop: '8%',
    marginRight: '2%'
    
+  //  elevation: 3,
+  //   shadowOffset: { width: 5, height: 5 },
+  //   shadowColor: "black",
+  //   shadowOpacity: 0.1,
+  //   shadowRadius: 3,
+  //   borderWidth: 0.3,
+
   },
 
   input: {
